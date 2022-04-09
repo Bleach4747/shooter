@@ -14,6 +14,7 @@ mixer.init()
 mixer.music.load('space.ogg')
 mixer.music.play()
 fire_sound = mixer.Sound('fire.ogg')
+
 #нам нужны такие картинки:
 img_back = "galaxy.jpg" #фон игры
 img_bullet = "bullet.png" #пуля
@@ -40,6 +41,7 @@ class GameSprite(sprite.Sprite):
       self.rect = self.image.get_rect()
       self.rect.x = player_x
       self.rect.y = player_y
+
 #метод, отрисовывающий героя на окне
   def reset(self):
       window.blit(self.image, (self.rect.x, self.rect.y))
@@ -57,6 +59,7 @@ class Player(GameSprite):
    def fire(self):
        bullet = Bullet(img_bullet, self.rect.centerx, self.rect.top, 15, 20, -15)
        bullets.add(bullet)
+
 #класс спрайта-врага 
 class Enemy(GameSprite):
   #движение врага
